@@ -12,8 +12,8 @@ typedef struct Lnode {
 	string value_str;
 	struct Lnode * next;
 }Node,*LNode; 
-LNode L,st,pause;//LÎªÍ·Ö¸Õë£¬stÎªÎ²Ö¸Õë, nodeÎªĞÂ´´½¨µÄÖ¸Õë, pauseÎªÃ¿´ÎÕÒµ½µÄÖ¸ÕëÎ»ÖÃ¡£
-void create_node(string &ch,int kind,string value_str,int value) {//´´½¨ĞÂµÄ½Úµã
+LNode L,st,pause;//Lä¸ºå¤´æŒ‡é’ˆï¼Œstä¸ºå°¾æŒ‡é’ˆ, nodeä¸ºæ–°åˆ›å»ºçš„æŒ‡é’ˆ, pauseä¸ºæ¯æ¬¡æ‰¾åˆ°çš„æŒ‡é’ˆä½ç½®ã€‚
+void create_node(string &ch,int kind,string value_str,int value) {//åˆ›å»ºæ–°çš„èŠ‚ç‚¹
 	LNode node = new Node;
 	//node = (LNode)malloc(sizeof(Lnode));
 	node->kind = kind;
@@ -30,7 +30,7 @@ void create_node(string &ch,int kind,string value_str,int value) {//´´½¨ĞÂµÄ½Úµã
 	st->next = node;
 	st = node;
 }
-bool search_L(string ch) {//ÔÚÁ´±íÀïÃæ²éÑ¯ÊÇ·ñÒÑÓĞch
+bool search_L(string ch) {//åœ¨é“¾è¡¨é‡Œé¢æŸ¥è¯¢æ˜¯å¦å·²æœ‰ch
 	LNode p;
 	p = L;
 	while (p!= NULL) {
@@ -46,7 +46,7 @@ bool search_L(string ch) {//ÔÚÁ´±íÀïÃæ²éÑ¯ÊÇ·ñÒÑÓĞch
 }
 void in() {
 	int i = 1,j=0;
-	if (str[i] =="\"") {//in "ÇëÊäÈë:",a;
+	if (str[i] =="\"") {//in "è¯·è¾“å…¥:",a;
 		i++;
 		while (str[i] != "\"") {
 			sign[j++] = str[i++];
@@ -55,7 +55,7 @@ void in() {
 		int k = 0;
 		while (sign[k] != "")cout << sign[k++];
 		i+=2;
-		if (!search_L(str[i])) {//Ñ°ÕÒaÔÚÁ´±íÖĞ£¬Ã»ÓĞµÄ»°´´½¨½Úµã£»
+		if (!search_L(str[i])) {//å¯»æ‰¾aåœ¨é“¾è¡¨ä¸­ï¼Œæ²¡æœ‰çš„è¯åˆ›å»ºèŠ‚ç‚¹ï¼›
 			cout << "have not the variable of " << str[i] << endl;
 		}
 		else {
@@ -94,7 +94,7 @@ void out() {
 	double value_r;
 	string value_s;
 	ch = str[i];
-	if (ch == "\"") {//out "Êä³ö×Ö·û´®";||out"Êä³ö×Ö·û´®\n";
+	if (ch == "\"") {//out "è¾“å‡ºå­—ç¬¦ä¸²";||out"è¾“å‡ºå­—ç¬¦ä¸²\n";
 		i++;
 		while (str[i] != "\"") {
 			if (str[i] == "\n") {
@@ -181,7 +181,7 @@ void grammer() {
 			i++;
 			while (str[i] != ";"&&str[i] != "("&&str[i] != ")"&&str[i] != "{"&&str[i] != "}"&&str[i] != "main"&&str[i] != ";") {
 				j = i+1;
-				if (str[j] == "=") {//¶¨ÒåµÄÊ±ºò¸³³õÖµeg: int a=4;
+				if (str[j] == "=") {//å®šä¹‰çš„æ—¶å€™èµ‹åˆå€¼eg: int a=4;
 					value_int= atoi(str[++j].c_str());
 					create_node(str[i], 3, "",value_int);
 					i += 3;
@@ -229,7 +229,7 @@ void grammer() {
 			i++;
 		}
 		else {
-			if (search_L(str[i])) {//±äÁ¿¸³Öµeg: a=4;
+			if (search_L(str[i])) {//å˜é‡èµ‹å€¼eg: a=4;
 				j = i + 1;
 				if (str[j] == "=") {
 					//if(str[++j])
@@ -252,7 +252,4 @@ int main() {
 	st = L;
 	lex();
 	getchar();
-
-	cout << "Ìí¼ÓÁËÒ»Ğ©ËµÃ÷" << endl;
-	return 0;
 }
