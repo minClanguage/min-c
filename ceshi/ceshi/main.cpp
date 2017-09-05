@@ -252,4 +252,5 @@ int main() {
 	st = L;
 	lex();
 	getchar();
+	cout << "FD" << endl;
 }
