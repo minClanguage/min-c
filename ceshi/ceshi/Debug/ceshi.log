@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\max\desktop\ceshi\ceshi\main.cpp(90): warning C4101: “ch0”: 未引用的局部变量
+  ceshi.vcxproj -> C:\Users\max\Desktop\ceshi\Debug\ceshi.exe
+  ceshi.vcxproj -> C:\Users\max\Desktop\ceshi\Debug\ceshi.pdb (Full PDB)

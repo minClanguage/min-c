@@ -1,0 +1,8 @@
+﻿  lex.cpp
+  main.cpp
+main.cpp(90): warning C4101: “ch0”: 未引用的局部变量
+  正在生成代码
+  All 150 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  ceshi.vcxproj -> C:\Users\max\Desktop\ceshi\Release\ceshi.exe
+  ceshi.vcxproj -> C:\Users\max\Desktop\ceshi\Release\ceshi.pdb (Full PDB)
